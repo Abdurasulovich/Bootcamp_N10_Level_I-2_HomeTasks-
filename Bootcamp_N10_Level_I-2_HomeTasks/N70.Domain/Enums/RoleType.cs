@@ -2,5 +2,7 @@
 
 public enum RoleType
 {
-    
+    Guest,
+    Host, 
+    Admin
 }

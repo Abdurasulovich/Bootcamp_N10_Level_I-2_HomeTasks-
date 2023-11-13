@@ -1,6 +1,17 @@
-﻿namespace N70.Infrastructure.Common.Identity.Services;
+﻿using N70.Application.Common.Identity.Services;
+using BC=BCrypt.Net.BCrypt;
 
-public class PasswordHasherService
+namespace N70.Infrastructure.Common.Identity.Services;
+
+public class PasswordHasherService : IPasswordHasherService
 {
-    
+    public string HashPassword(string password)
+    {
+        return BC.HashPassword(password);
+    }
+
+    public bool ValidatePassword(string password, string hashedPassword)
+    {
+        return BC.Verify(password, hashedPassword);
+    }
 }

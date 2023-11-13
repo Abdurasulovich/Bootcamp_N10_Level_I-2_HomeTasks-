@@ -1,6 +1,6 @@
 ﻿namespace N70.Application.Common.Constants;
 
-public class ClaimConstants
+public static class ClaimConstants
 {
-    
+    public const string UserId = "UserId";
 }

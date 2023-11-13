@@ -2,5 +2,5 @@
 
 public interface IEmailOrchestrationService
 {
-    
+    ValueTask<bool> SendAsync(string emailAddress, string message);
 }

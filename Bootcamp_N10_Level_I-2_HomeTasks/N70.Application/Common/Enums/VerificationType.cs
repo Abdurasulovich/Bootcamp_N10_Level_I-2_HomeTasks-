@@ -1,6 +1,9 @@
 ﻿namespace N70.Application.Common.Enums;
 
-public class VerificationType
+public enum VerificationType
 {
-    
+    EmailAddressVerificetion,
+    PhoneNumberVerificarion,
+    AccountDeleteVerification
+        
 }

@@ -1,6 +1,8 @@
 ﻿namespace N70.Application.Common.Identity.Services;
 
-public class IPasswordHasherService
+public interface IPasswordHasherService
 {
+    string HashPassword(string password);
     
+    bool ValidatePassword(string password, string hashedPassword);
 }

@@ -1,6 +1,6 @@
 ﻿namespace N70.Application.Common.Notifocations.Settings;
 
-public class ValidationTokenSettings
+public class VerificationTokenSettings
 {
     public string IdentityVerificationTokenPurpose { get; set; } = default!;
     

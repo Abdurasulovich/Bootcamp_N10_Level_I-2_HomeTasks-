@@ -1,8 +1,12 @@
-﻿namespace N70.Application.Identity.Models;
+﻿using N70.Application.Common.Enums;
+
+namespace N70.Application.Identity.Models;
 
 public class VerificationToken
 {
-    public Guid Id { get; set; }
+    public Guid UserId { get; set; }
     
-    public VerificationToken
+    public VerificationType Type { get; set; }
+    
+    public DateTimeOffset ExpiryTime { get; set; }
 }
