@@ -12,12 +12,12 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder.HasData(new User
         {
-            Id = Guid.Parse("cefdf4ea-215b-45cb-8069-40455d1c8336"),
-            FirstName = "Admin",
-            LastName = "Admin",
-            Age = 0,
-            EmailAddress = "",
-            PasswordHash = "",
+            Id = Guid.Parse("{97634E3B-3515-4AA6-BAFA-4A81AB2311FD}"),
+            FirstName = "Java",
+            LastName = "Dev",
+            Age = 22,
+            EmailAddress = "javaengeineer@gmail.com",
+            PasswordHash = "ahgkajfasd",
             IsEmailAddressVerified = true,
             RoleId = Guid.Parse("6d3503ab-1a35-47b9-be09-b24ff4fbf6bf")
         });

@@ -16,9 +16,10 @@ public class VerificationTokenGeneratorService : IVerificationTokenGeneratorServ
     public VerificationTokenGeneratorService(IDataProtectionProvider protectionProvider,
         IOptions<VerificationTokenSettings> tokenSettings)
     {
+        _verificationTokenSettings = tokenSettings.Value;
         _dataProtector =
             protectionProvider.CreateProtector(_verificationTokenSettings.IdentityVerificationTokenPurpose);
-        _verificationTokenSettings = tokenSettings.Value;
+        
     }
     public string GenerateToken(VerificationType type, Guid userId)
     {

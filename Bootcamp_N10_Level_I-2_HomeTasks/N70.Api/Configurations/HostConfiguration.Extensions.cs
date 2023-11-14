@@ -17,11 +17,17 @@ namespace N70.Api.Configurations;
 
 public static partial class HostConfiguration
 {
+    public static WebApplicationBuilder AddHttpContextProvider(this WebApplicationBuilder builder)
+    {
+        builder.Services.AddHttpContextAccessor();
+        return builder;
+    }
     private static WebApplicationBuilder AddPersistence(this WebApplicationBuilder builder)
     {
         builder.Services.AddDbContext<IdentityDbContext>(options =>
             options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
-        
+
+
         return builder;
     }
 
@@ -37,12 +43,14 @@ public static partial class HostConfiguration
             .AddTransient<IPasswordHasherService, PasswordHasherService>()
             .AddTransient<IVerificationTokenGeneratorService, VerificationTokenGeneratorService>();
 
-        builder.Services.AddScoped<IUserRepository, UserRepository>()
+        builder.Services
+            .AddScoped<IUserRepository, UserRepository>()
             .AddScoped<IRoleRepository, RoleRepository>()
             .AddScoped<IAccessTokenRepository, AccessTokenRepository>();
 
-        builder.Services.AddScoped<IAccountService, AccountService>()
-            .AddTransient<IAuthService, AuthService>()
+        builder.Services
+            .AddScoped<IAccountService, AccountService>()
+            .AddScoped<IAuthService, AuthService>()
             .AddScoped<IUserService, UserService>()
             .AddScoped<IRoleService, RoleService>()
             .AddScoped<IAccessTokenService, AccessTokenService>();
@@ -91,7 +99,6 @@ public static partial class HostConfiguration
     {
         builder.Services.AddRouting(options => options.LowercaseUrls = true);
         builder.Services.AddControllers();
-        builder.Services.AddHttpContextAccessor();
 
         return builder;
     }
