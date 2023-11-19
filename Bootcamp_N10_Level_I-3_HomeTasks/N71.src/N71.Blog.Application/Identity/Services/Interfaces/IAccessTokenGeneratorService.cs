@@ -4,7 +4,7 @@ using N71.Blog.Domain.Entity;
 
 namespace N71.Blog.Application.Identity.Services.Interfaces;
 
-public interface IAccessTokenGenerator
+public interface IAccessTokenGeneratorService
 {
     string GetToken(User user);
 

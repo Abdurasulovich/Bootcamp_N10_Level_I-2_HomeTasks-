@@ -1,6 +1,14 @@
-﻿namespace Notification.Infrastructure.Application.Common.Notifications.Models;
+﻿using Notification.Infrastructure.Domain.Entities;
 
-public class SmsMessage
+namespace Notification.Infrastructure.Application.Common.Notifications.Models;
+
+public class SmsMessage : NotificationMessage
 {
-    
+    public string SenderPhoneNumber { get; set; } = default!;
+
+    public string ReceiverPhoneNumber { get; set; } = default!;
+
+    public SmsTemplate Template { get; set; } = default!;
+
+    public string Message { get; set; } = default!;
 }

@@ -2,5 +2,7 @@
 
 public enum NotificationEvent
 {
-    
+    OnRendering,
+    OnSending,
+    OnSaving
 }

@@ -1,6 +1,10 @@
-﻿namespace Notification.Infrastructure.Application.Common.Notifications.Models;
+﻿using Notification.Infrastructure.Domain.Enums;
 
-public class EmailNotificationRequest
+namespace Notification.Infrastructure.Application.Common.Notifications.Models;
+
+public class EmailNotificationRequest : NotificationRequest
 {
-    
+    public EmailNotificationRequest() => Type = NotificationType.Email;
+
+    // attachments etc.
 }

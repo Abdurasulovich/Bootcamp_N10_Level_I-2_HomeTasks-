@@ -2,5 +2,5 @@
 
 public class ClaimConstants
 {
-    
+    public const string UserId = "UserId";
 }

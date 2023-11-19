@@ -1,6 +1,6 @@
 ﻿namespace Notification.Infrastructure.Domain.Common.Entities;
 
-public class Entity
+public interface IEntity
 {
-    
+    public Guid Id { get; set; }
 }

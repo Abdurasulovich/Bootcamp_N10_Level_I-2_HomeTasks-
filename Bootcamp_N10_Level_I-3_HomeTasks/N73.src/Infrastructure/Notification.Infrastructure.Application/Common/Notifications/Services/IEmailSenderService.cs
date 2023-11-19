@@ -1,6 +1,8 @@
-﻿namespace Notification.Infrastructure.Application.Common.Notifications.Services;
+﻿using Notification.Infrastructure.Application.Common.Notifications.Models;
 
-public class IEmailSenderService
+namespace Notification.Infrastructure.Application.Common.Notifications.Services;
+
+public interface IEmailSenderService
 {
-    
+    ValueTask<bool> SendAsync(EmailMessage emailMessage, CancellationToken cancellationToken = default);
 }

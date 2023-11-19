@@ -1,6 +1,12 @@
-﻿namespace Notification.Infrastructure.Persistance.EntityConfigurations;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Notification.Infrastructure.Domain.Entities;
 
-public class UserConfiguration
+namespace Notification.Infrastructure.Persistance.EntityConfigurations;
+
+public class UserConfiguration : IEntityTypeConfiguration<User>
 {
-    
+    public void Configure(EntityTypeBuilder<User> builder)
+    {
+    }
 }

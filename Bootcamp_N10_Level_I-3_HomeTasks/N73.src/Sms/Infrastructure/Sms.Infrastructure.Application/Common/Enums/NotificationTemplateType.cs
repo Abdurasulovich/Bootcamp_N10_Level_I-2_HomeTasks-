@@ -1,6 +1,7 @@
 ﻿namespace Sms.Infrastructure.Application.Common.Enums;
 
-public class NotificationTemplateType
+public enum NotificationTemplateType
 {
-    
+    SystemWelcomeNotification,
+    EmailVerificationNotification
 }

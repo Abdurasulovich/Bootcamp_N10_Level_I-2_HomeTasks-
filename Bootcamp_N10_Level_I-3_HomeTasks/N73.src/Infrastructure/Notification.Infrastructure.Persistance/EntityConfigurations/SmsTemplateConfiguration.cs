@@ -1,6 +1,13 @@
-﻿namespace Notification.Infrastructure.Persistance.EntityConfigurations;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Notification.Infrastructure.Domain.Entities;
 
-public class SmsTemplateConfiguration
+namespace Notification.Infrastructure.Persistance.EntityConfigurations;
+
+public class SmsTemplateConfiguration : IEntityTypeConfiguration<SmsTemplate>
 {
-    
+    public void Configure(EntityTypeBuilder<SmsTemplate> builder)
+    {
+        
+    }
 }

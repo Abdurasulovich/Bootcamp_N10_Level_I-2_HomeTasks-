@@ -1,6 +1,9 @@
-﻿namespace Notification.Infrastructure.Application.Common.Models.Querying;
+﻿using Notification.Infrastructure.Domain.Enums;
 
-public class NotificationTemplateFilter
+namespace Notification.Infrastructure.Application.Common.Models.Querying;
+
+public class NotificationTemplateFilter : FilterPagination
 {
-    
+    public IList<NotificationType> TemplateType { get; set; }
+
 }
