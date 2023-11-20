@@ -1,4 +1,5 @@
-﻿using Notification.Infrastructure.Application.Common.Notifications.Brokers;
+﻿using Microsoft.Extensions.Options;
+using Notification.Infrastructure.Application.Common.Notifications.Brokers;
 using Notification.Infrastructure.Application.Common.Notifications.Models;
 using Notification.Infrastructure.Infrastructure.Common.Settings;
 using System.Net;
@@ -10,9 +11,9 @@ public class SmtpEmailSenderBroker : IEmailSenderBroker
 {
     private readonly SmtpEmailSenderSettings _smtpEmailSenderSettings;
 
-    public SmtpEmailSenderBroker(SmtpEmailSenderSettings smtpEmailSenderSettings)
+    public SmtpEmailSenderBroker(IOptions<SmtpEmailSenderSettings> smtpEmailSenderSettings)
     {
-        _smtpEmailSenderSettings = smtpEmailSenderSettings;
+        _smtpEmailSenderSettings = smtpEmailSenderSettings.Value;
     }
 
     public ValueTask<bool> SendAsync(EmailMessage emailMessage, CancellationToken cancellationToken = default)

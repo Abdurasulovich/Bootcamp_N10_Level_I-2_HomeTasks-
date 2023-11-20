@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Notification.Infrastructure.Domain.Entities;
 using Notification.Infrastructure.Domain.Enums;
@@ -22,6 +21,7 @@ public class NotificationHistoryConfiguration : IEntityTypeConfiguration<Notific
             .HasForeignKey(history => history.TemplateId);
 
         builder.HasOne<User>().WithMany().HasForeignKey(history => history.SenderUserId);
+
         builder.HasOne<User>().WithMany().HasForeignKey(history => history.ReceiverUserId);
     }
 }

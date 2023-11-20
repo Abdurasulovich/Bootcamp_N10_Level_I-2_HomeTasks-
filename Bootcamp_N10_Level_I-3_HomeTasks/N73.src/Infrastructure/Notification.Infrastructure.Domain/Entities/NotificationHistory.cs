@@ -3,10 +3,8 @@ using Notification.Infrastructure.Domain.Enums;
 
 namespace Notification.Infrastructure.Domain.Entities;
 
-public class NotificationHistory : IEntity
+public abstract class NotificationHistory : IEntity
 {
-    public Guid Id { get; set; }
-    
     public Guid TemplateId { get; set; }
     
     public Guid SenderUserId { get; set; }
@@ -22,4 +20,5 @@ public class NotificationHistory : IEntity
     public string? ErrorMessage { get; set; }
     
     public NotificationTemplate Template { get; set; }
+    public Guid Id { get; set; }
 }

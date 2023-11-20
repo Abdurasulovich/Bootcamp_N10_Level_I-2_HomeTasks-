@@ -1,4 +1,5 @@
-﻿using Notification.Infrastructure.Application.Common.Notifications.Brokers;
+﻿using Microsoft.Extensions.Options;
+using Notification.Infrastructure.Application.Common.Notifications.Brokers;
 using Notification.Infrastructure.Application.Common.Notifications.Models;
 using Notification.Infrastructure.Infrastructure.Common.Settings;
 using Twilio;
@@ -9,9 +10,9 @@ namespace Notification.Infrastructure.Infrastructure.Common.Notificaiton.Brokers
 public class TwilioSmsSenderBroker : ISmsSenderBroker
 {
     private readonly TwilioSmsSenderSettings _twilioSmsSenderSettings;
-    public TwilioSmsSenderBroker(TwilioSmsSenderSettings twilioSmsSenderSettings)
+    public TwilioSmsSenderBroker(IOptions<TwilioSmsSenderSettings> twilioSmsSenderSettings)
     { 
-        _twilioSmsSenderSettings = twilioSmsSenderSettings; 
+        _twilioSmsSenderSettings = twilioSmsSenderSettings.Value; 
     }
 
     public ValueTask<bool> SendAsync(SmsMessage smsMessage, CancellationToken cancellationToken = default)

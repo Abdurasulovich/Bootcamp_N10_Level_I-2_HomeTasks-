@@ -61,8 +61,11 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notification.Infrastructure.Domain", "N73.src\Infrastructure\Notification.Infrastructure.Domain\Notification.Infrastructure.Domain.csproj", "{F2635963-A7B0-48E5-B30B-88B9C3BA9AF4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notification.Infrastructure.Api", "N73.src\Infrastructure\Notification.Infrastructure.Api\Notification.Infrastructure.Api.csproj", "{6F171A8F-0633-4655-AF79-06555567AED0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C3B6D244-EC8D-40A4-A60E-F45392F83480} = {C3B6D244-EC8D-40A4-A60E-F45392F83480}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notification.Infrastructure.Application", "N73.src\Infrastructure\Notification.Infrastructure.Application\Notification.Infrastructure.Application.csproj", "{4E148896-D397-47D3-AB2C-BB2A6943C31D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notification.Infrastructure.Application", "N73.src\Infrastructure\Notification.Infrastructure.Application\Notification.Infrastructure.Application.csproj", "{4E148896-D397-47D3-AB2C-BB2A6943C31D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F2635963-A7B0-48E5-B30B-88B9C3BA9AF4} = {F2635963-A7B0-48E5-B30B-88B9C3BA9AF4}
 	EndProjectSection
