@@ -1,0 +1,6 @@
+@N75.api_HostAddress = http://localhost:5045
+
+GET {{N75.api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
