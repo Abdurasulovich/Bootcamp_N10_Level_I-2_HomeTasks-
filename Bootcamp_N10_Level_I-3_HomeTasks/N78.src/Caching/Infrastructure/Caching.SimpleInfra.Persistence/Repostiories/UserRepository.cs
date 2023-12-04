@@ -10,7 +10,7 @@ namespace Caching.SimpleInfra.Persistence.Repostiories;
 public class UserRepository(IdentityDbContext dbContext, ICacheBroker cacheBroker) : EntityRepositoryBase<User, IdentityDbContext>(
     dbContext,
     cacheBroker, 
-    new CacheEntryOptions
+    new CacheEntryOptions()
     //new CacheEntryOptions(TimeSpan.FromMinutes(10), TimeSpan.FromMinutes(3))
 ), IUserRepository
 {
