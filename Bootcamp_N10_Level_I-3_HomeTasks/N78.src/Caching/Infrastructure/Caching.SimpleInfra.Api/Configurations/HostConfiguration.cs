@@ -9,7 +9,7 @@
                 .AddCaching()
                 .AddExposers();
 
-            return new(builder);
+            return new ValueTask<WebApplicationBuilder>(builder);
         }
 
         public static async ValueTask<WebApplication> ConfigureAsync(this WebApplication app)

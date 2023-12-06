@@ -1,4 +1,5 @@
 ﻿using Caching.SimpleInfra.Domain.Common.Caching;
+using Caching.SimpleInfra.Domain.Common.Query;
 using Caching.SimpleInfra.Domain.Entities;
 using Caching.SimpleInfra.Persistence.Caching;
 using Caching.SimpleInfra.Persistence.DataContexts;
@@ -23,9 +24,15 @@ public class UserRepository(IdentityDbContext dbContext, ICacheBroker cacheBroke
     public new IQueryable<User> Get(Expression<Func<User, bool>>? predicate, bool asNoTracking) =>
         base.Get(predicate, asNoTracking);
 
+
     public new ValueTask<User?> GetByIdAsync(Guid userId, bool asNoTracking, CancellationToken cancellationToken)=>
         base.GetByIdAsync(userId, asNoTracking, cancellationToken);
 
     public new ValueTask<User> UpdateAsync(User user, bool saveChanges, CancellationToken cancellationToken)=>
         base.UpdateAsync(user, saveChanges, cancellationToken);
+
+    public new ValueTask<IList<User>> GetAsync(QuerySpecification<User> querySpecification, bool asNoTracking = false, CancellationToken cancellationToken = default)
+    {
+        return base.GetAsync(querySpecification, asNoTracking, cancellationToken);
+    }
 }

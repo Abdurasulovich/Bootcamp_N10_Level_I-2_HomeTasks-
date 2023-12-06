@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .navigation a{
+        @apply relative text-white no-underline font-medium ml-10
+    }
+
+    .navigation a::after {
+        @apply content-[''] absolute w-full h-[3px] bg-white origin-right transition-transform duration-[0.5s] rounded-[5px] scale-x-0 left-0 -bottom-1.5;
+    }
+
+    .navigation a:hover::after {
+        @apply origin-left scale-x-100;
+    }
+}

@@ -1,4 +1,5 @@
 ﻿using Caching.SimpleInfra.Application.Common.Identity.Services;
+using Caching.SimpleInfra.Domain.Common.Query;
 using Caching.SimpleInfra.Domain.Entities;
 using Caching.SimpleInfra.Persistence.Repostiories.Interfaces;
 using System.Linq.Expressions;
@@ -15,6 +16,11 @@ public class UserService(IUserRepository userRepository) : IUserService
 
     public IQueryable<User> Get(Expression<Func<User, bool>>? predicate = null, bool asNoTracking = false)=>
         userRepository.Get(predicate, asNoTracking);
+
+    public async ValueTask<IList<User>> GetAsync(QuerySpecification<User> querySpecification, bool asNoTracking = false, CancellationToken cancellationToken = default)
+    {
+        return await userRepository.GetAsync(querySpecification, asNoTracking, cancellationToken);
+    }
 
     public ValueTask<User?> GetByIdAsync(Guid userId, bool asNoTracking = false, CancellationToken cancellationToken = default)=>
         userRepository.GetByIdAsync(userId, asNoTracking, cancellationToken);

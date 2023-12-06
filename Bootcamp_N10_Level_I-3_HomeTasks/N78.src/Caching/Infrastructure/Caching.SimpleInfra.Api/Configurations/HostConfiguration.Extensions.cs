@@ -19,8 +19,16 @@ public static partial class HostConfiguration
         builder.Services.Configure<CacheSettings>(builder.Configuration.GetSection(nameof(CacheSettings)));
 
         //register lazy memory cache
-        builder.Services.AddLazyCache();
-        builder.Services.AddSingleton<ICacheBroker, LazyMemoryCacheBroker>();
+        //builder.Services.AddLazyCache();
+        builder.Services.AddStackExchangeRedisCache(
+            options =>
+            {
+                options.Configuration = builder.Configuration.GetConnectionString("RedisConnectionString");
+                options.InstanceName = "Caching.SimpleInfra";
+            }
+            );
+        //builder.Services.AddSingleton<ICacheBroker, LazyMemoryCacheBroker>();
+        builder.Services.AddSingleton<ICacheBroker, RedisDistributedCacheBroker>();
 
         return builder;
     }

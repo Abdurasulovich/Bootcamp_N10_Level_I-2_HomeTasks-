@@ -80,15 +80,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Caching", "Caching", "{14B7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{13E3C104-C930-449F-B356-B09A791B7B3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.SimpleInfra.Infrastructure", "N78.src\Caching\Infrastructure\Caching.SimpleInfra.Infrastructure\Caching.SimpleInfra.Infrastructure.csproj", "{9E3D680E-4C2F-49B9-B71B-751785462434}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Caching.SimpleInfra.Infrastructure", "N78.src\Caching\Infrastructure\Caching.SimpleInfra.Infrastructure\Caching.SimpleInfra.Infrastructure.csproj", "{9E3D680E-4C2F-49B9-B71B-751785462434}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.SimpleInfra.Persistence", "N78.src\Caching\Infrastructure\Caching.SimpleInfra.Persistence\Caching.SimpleInfra.Persistence.csproj", "{48473F6C-45F7-44C3-9B1A-52F8AA039B5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Caching.SimpleInfra.Persistence", "N78.src\Caching\Infrastructure\Caching.SimpleInfra.Persistence\Caching.SimpleInfra.Persistence.csproj", "{48473F6C-45F7-44C3-9B1A-52F8AA039B5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.SimpleInfra.Domain", "N78.src\Caching\Infrastructure\Caching.SimpleInfra.Domain\Caching.SimpleInfra.Domain.csproj", "{EADF76E3-017B-4324-ADAE-A2AEF9058DA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Caching.SimpleInfra.Domain", "N78.src\Caching\Infrastructure\Caching.SimpleInfra.Domain\Caching.SimpleInfra.Domain.csproj", "{EADF76E3-017B-4324-ADAE-A2AEF9058DA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.SimpleInfra.Application", "N78.src\Caching\Infrastructure\Caching.SimpleInfra.Application\Caching.SimpleInfra.Application.csproj", "{09E37B01-1B52-4A1C-AC13-7323595CFA53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Caching.SimpleInfra.Application", "N78.src\Caching\Infrastructure\Caching.SimpleInfra.Application\Caching.SimpleInfra.Application.csproj", "{09E37B01-1B52-4A1C-AC13-7323595CFA53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.SimpleInfra.Api", "N78.src\Caching\Infrastructure\Caching.SimpleInfra.Api\Caching.SimpleInfra.Api.csproj", "{AA48F651-0A5C-432A-9EA3-E7510C510BF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Caching.SimpleInfra.Api", "N78.src\Caching\Infrastructure\Caching.SimpleInfra.Api\Caching.SimpleInfra.Api.csproj", "{AA48F651-0A5C-432A-9EA3-E7510C510BF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N76.src", "N76.src", "{1A4F2808-2821-44BB-82CE-D7F68319F290}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "N76.Api", "N76.src\N76.Api\N76.Api.csproj", "{7023D1F3-903A-4D0A-927E-AC6F2491DF2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -200,6 +204,10 @@ Global
 		{AA48F651-0A5C-432A-9EA3-E7510C510BF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA48F651-0A5C-432A-9EA3-E7510C510BF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA48F651-0A5C-432A-9EA3-E7510C510BF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7023D1F3-903A-4D0A-927E-AC6F2491DF2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7023D1F3-903A-4D0A-927E-AC6F2491DF2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7023D1F3-903A-4D0A-927E-AC6F2491DF2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7023D1F3-903A-4D0A-927E-AC6F2491DF2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -239,6 +247,7 @@ Global
 		{EADF76E3-017B-4324-ADAE-A2AEF9058DA3} = {13E3C104-C930-449F-B356-B09A791B7B3A}
 		{09E37B01-1B52-4A1C-AC13-7323595CFA53} = {13E3C104-C930-449F-B356-B09A791B7B3A}
 		{AA48F651-0A5C-432A-9EA3-E7510C510BF7} = {13E3C104-C930-449F-B356-B09A791B7B3A}
+		{7023D1F3-903A-4D0A-927E-AC6F2491DF2B} = {1A4F2808-2821-44BB-82CE-D7F68319F290}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D9EE2BBA-9297-414D-8D21-BB850949FC0E}

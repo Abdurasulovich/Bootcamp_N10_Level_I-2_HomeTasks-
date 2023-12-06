@@ -9,6 +9,7 @@ public class IdentityDbContext(DbContextOptions<IdentityDbContext> options) : Db
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        var test = modelBuilder.Model.GetEntityTypes();
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(IdentityDbContext).Assembly);
     }
 }

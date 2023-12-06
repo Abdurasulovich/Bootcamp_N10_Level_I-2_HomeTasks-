@@ -26,29 +26,32 @@ namespace Caching.SimpleInfra.Infrastructure.Common.Caching
 
         public async ValueTask<T> GetOrSetAsync<T>(string key, Func<Task<T>> valueFactory, CacheEntryOptions? entryOptions=default)
         {
-            var currentEntryOptions = _entryOpitons;
-            if (entryOptions != default)
-            {
-                currentEntryOptions = _entryOpitons.DeepClone();
-                _entryOpitons.AbsoluteExpirationRelativeToNow = entryOptions.AbsoluteExpirationRelativeToNow;
-                _entryOpitons.SlidingExpiration = entryOptions.SlidingExpiration;
-            }
-
-            return await appCache.GetOrAddAsync(key, valueFactory, _entryOpitons);
+            return await appCache.GetOrAddAsync(key, valueFactory, GetCacheEntryOptions(entryOptions));
         }
 
         public ValueTask SetAsync<T>(string key, T value, CacheEntryOptions? entryOptions= default)
         {
-            var currentEntryOptions = _entryOpitons;
-            if (entryOptions != default)
-            {
-                currentEntryOptions = _entryOpitons.DeepClone();
-                _entryOpitons.AbsoluteExpirationRelativeToNow = entryOptions.AbsoluteExpirationRelativeToNow;
-                _entryOpitons.SlidingExpiration = entryOptions.SlidingExpiration;
-            }
-            appCache.Add(key, value, _entryOpitons);
+            appCache.Add(key, value, GetCacheEntryOptions(entryOptions));
 
             return ValueTask.CompletedTask;
+        }
+
+        public MemoryCacheEntryOptions GetCacheEntryOptions(CacheEntryOptions? entryOptions)
+        {
+            if (entryOptions == default || (!entryOptions.AbsoluteExpirationRelativeToNow.HasValue && !entryOptions.SlidingExpiration.HasValue))
+                return _entryOpitons;
+
+            var currentEntryOptions = _entryOpitons.DeepClone();
+
+            currentEntryOptions.AbsoluteExpirationRelativeToNow = entryOptions.AbsoluteExpirationRelativeToNow;
+            currentEntryOptions.SlidingExpiration = entryOptions.SlidingExpiration;
+
+            return currentEntryOptions;
+        }
+
+        public ValueTask<bool> TryGetAsync<T>(string key, out T value)
+        {
+            return new ValueTask<bool>(appCache.TryGetValue(key, out value));
         }
     }
 }

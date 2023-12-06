@@ -1,4 +1,5 @@
-﻿using Caching.SimpleInfra.Domain.Entities;
+﻿using Caching.SimpleInfra.Domain.Common.Query;
+using Caching.SimpleInfra.Domain.Entities;
 using System.Linq.Expressions;
 using System.Xml.Linq;
 
@@ -10,6 +11,12 @@ public interface IUserService
         Expression<Func<User, bool>>? predicate = default, 
         bool asNoTracking = false
         );
+
+    ValueTask<IList<User>> GetAsync(
+        QuerySpecification<User> querySpecification,
+        bool asNoTracking = false,
+        CancellationToken cancellationToken = default
+    );
 
     ValueTask<User?> GetByIdAsync(
         Guid userId, 
