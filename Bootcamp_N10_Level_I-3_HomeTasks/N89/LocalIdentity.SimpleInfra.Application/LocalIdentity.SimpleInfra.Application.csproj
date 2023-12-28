@@ -4,17 +4,15 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LocalIndentity.SimpleInfra.Domain\LocalIdentity.SimpleInfra.Domain.csproj" />
+    <ProjectReference Include="..\LocalIdentity.SimpleInfra.Domain\LocalIdentity.SimpleInfra.Domain.csproj" />
   </ItemGroup>
-
 	<ItemGroup>
-		<PackageReference Include="FluentValidation" Version="11.8.1" />
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.13" />
-		<PackageReference Include="RabbitMQ.Client" Version="7.0.0-alpha.2" />
+		<PackageReference Include="FluentValidation" Version="11.8.1"/>
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.13"/>
+		<PackageReference Include="RabbitMQ.Client" Version="7.0.0-alpha.2"/>
 	</ItemGroup>
 
 </Project>

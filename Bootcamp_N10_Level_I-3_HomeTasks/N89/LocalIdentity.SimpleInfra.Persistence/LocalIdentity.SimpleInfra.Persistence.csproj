@@ -7,10 +7,6 @@
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\LocalIndentity.SimpleInfra.Domain\LocalIdentity.SimpleInfra.Domain.csproj" />
-  </ItemGroup>
-
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
 			<PrivateAssets>all</PrivateAssets>
@@ -21,6 +17,10 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\LocalIdentity.SimpleInfra.Domain\LocalIdentity.SimpleInfra.Domain.csproj" />
 	</ItemGroup>
 
 </Project>
